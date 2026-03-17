@@ -1,23 +1,29 @@
 # Prompt Engineering Glossary
 
-This glossary defines highly technical or specialized jargon used throughout the Prompt Patterns repository to ensure the guide remains accessible to readers of all skill levels.
+Definitions for technical terms used across the [Prompt Patterns](prompt_patterns.md) repository. All terms are listed alphabetically.
 
 ---
 
-### [jailbreaking](#jailbreaking)
-The act of using complex prompt structures or assumed personas to bypass an AI's rigid safety filters, constraints, or default conversational tone.
+### Few-Shot
+> **Definition:** Providing the AI with a few concrete examples of the input-output pattern you want before asking it to solve your actual query.
+> **Context:** Contrasted with zero-shot prompting. Used to "train" an AI's behavior within a single conversation.
 
-### [llm](#llm)
-**Large Language Model.** The underlying AI engine (like ChatGPT, Claude, or Gemini) that processes your prompts and generates text.
+### Jailbreaking
+> **Definition:** Using complex prompt structures or assumed personas to bypass an AI's safety filters, constraints, or default conversational tone.
+> **Context:** Often achieved through the Persona Pattern. The ethics and legality of jailbreaking vary by platform and use case.
 
-### [state machine](#state-machine)
-In programming and game development, a system that transition between different defined "states" (e.g., a character switching from `Idle` to `Running` to `Jumping`). They can be complex to debug.
+### LLM
+> **Definition:** Large Language Model. The underlying AI engine (like ChatGPT, Claude, or Gemini) that processes your prompts and generates text.
+> **Context:** The foundational technology that all prompt engineering patterns are designed to interact with.
 
-### [vibecoding](#vibecoding)
-A modern approach to software development where the user relies heavily on AI to write the actual code. The user acts more like a designer or director, describing the "vibe," desired functionality, and logic in plain English, while the AI handles the syntax and implementation.
+### State Machine
+> **Definition:** A programming construct that transitions between different defined "states," such as a game character switching from `Idle` to `Running` to `Jumping`.
+> **Context:** Often referenced in game development examples. State machines can be complex to debug, which makes them a good candidate for AI-assisted reasoning patterns.
 
-### [zero-shot](#zero-shot)
-Asking an AI to perform a task without providing it any prior examples or training data within the prompt itself. 
+### Vibecoding
+> **Definition:** The act of writing software using natural language by interacting with an AI, rather than typing traditional code syntax.
+> **Context:** The user acts more like a designer or director, describing the desired functionality and logic in plain English, while the AI handles syntax and implementation.
 
-### [few-shot](#few-shot)
-Providing the AI with a few concrete examples of the input-output pattern you want before asking it to solve your actual query.
+### Zero-Shot
+> **Definition:** Asking an AI to perform a task without providing it any prior examples or training data within the prompt itself.
+> **Context:** The default mode of most AI interactions. Contrasted with few-shot prompting, where examples are provided.
