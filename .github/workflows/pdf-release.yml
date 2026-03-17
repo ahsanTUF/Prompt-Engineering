@@ -35,16 +35,16 @@ jobs:
           author: "Based on the Vanderbilt University Coursera Course"
           date: "$(date +'%B %d, %Y')"
           titlepage: true
-          titlepage-color: "1a1a2e"
-          titlepage-text-color: "e94560"
-          titlepage-rule-color: "0f3460"
+          titlepage-color: 1a1a2e
+          titlepage-text-color: e94560
+          titlepage-rule-color: 0f3460
           titlepage-rule-height: 2
           toc: true
           toc-own-page: true
           toc-depth: 2
           colorlinks: true
-          linkcolor: "e94560"
-          urlcolor: "0f3460"
+          linkcolor: e94560
+          urlcolor: 0f3460
           geometry: "margin=1in"
           fontsize: "11pt"
           listings: true
