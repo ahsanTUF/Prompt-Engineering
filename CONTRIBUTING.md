@@ -14,7 +14,7 @@ All contributions must follow the guidelines below to maintain consistency acros
 
 ## 2. Pattern Template (Mandatory)
 
-Every pattern entry in `PATTERNS.md` must follow this exact structure:
+Every pattern entry in `PATTERNS.md` must follow this exact structure to ensure cross-platform aesthetics (GitHub + Obsidian):
 
 ```markdown
 ---
@@ -22,20 +22,21 @@ Every pattern entry in `PATTERNS.md` must follow this exact structure:
 ## The [Pattern Name] Pattern
 **Category:** `[Tag]` · **Usability:** [1-5 Stars]
 
-##### 📖 Definition
-[Core explanation. Link technical terms to GLOSSARY.md, e.g. [LLM](GLOSSARY.md#llm).]
+###### 📖 Definition
+- [Core explanation. Link technical terms to GLOSSARY.md, e.g. [LLM](GLOSSARY.md#llm).]
 
-##### 💡 Use Case
-[Relatable scenario(s) explaining why you would use this pattern.]
+###### 💡 Use Case
+- [Relatable scenario explaining why you would use this pattern.]
+- [Optional second scenario.]
 
-##### ⚙️ Modifiers (Optional)
+###### ⚙️ Modifiers (Optional)
 - [Optional variations or toggles the user can add to the base pattern.]
 
-#### Example 1: Technical / Vibecoding
+##### Example 1: Technical / Vibecoding
 ```text
 [Prompt goes here]
 ```
-#### Example 2: Creative / Shower Thought
+##### Example 2: Creative / Shower Thought
 ```text
 [Prompt goes here]
 ```
@@ -43,9 +44,9 @@ Every pattern entry in `PATTERNS.md` must follow this exact structure:
 
 ### Rules
 
-1. Use `#####` (h5) for Definition, Use Case, and Modifiers labels.
-2. Use `####` (h4) for Example labels.
-3. Body text under Definition/Use Case is **plain text** — do not wrap it in blockquotes (`>`).
+1. Use `######` (h6) for Definition, Use Case, and Modifiers labels.
+2. Use `#####` (h5) for Example labels.
+3. Body text under Definition, Use Case, and Modifiers must be formatted as **bullet points** (`- `) to ensure proper indentation and readability without adopting faded blockquote styles.
 4. Prompts must be inside ` ```text ``` ` code blocks for 1-click copying on GitHub.
 5. Separate each pattern with `---`.
 
@@ -63,7 +64,7 @@ If your pattern introduces a technical term not already in `GLOSSARY.md`, add it
 
 Link the term on its first use in your pattern's definition:
 ```markdown
-Getting an [LLM](GLOSSARY.md#llm) to roleplay...
+- Getting an [LLM](GLOSSARY.md#llm) to roleplay...
 ```
 
 ---
@@ -72,7 +73,8 @@ Getting an [LLM](GLOSSARY.md#llm) to roleplay...
 
 | File | Purpose |
 |------|---------|
-| `PATTERNS.md` | All prompt pattern entries |
+| `PATTERNS.md` | All active prompt pattern entries |
+| `OBSOLETE_PATTERNS.md` | Archived patterns now baked into modern LLMs |
 | `GLOSSARY.md` | Technical term definitions |
 | `CONTRIBUTING.md` | This file — formatting rules |
 | `README.md` | Repository overview and pattern index |

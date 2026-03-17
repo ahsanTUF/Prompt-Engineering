@@ -10,7 +10,8 @@ Based on the [Prompt Engineering for ChatGPT](https://www.coursera.org/learn/pro
 
 | File | Purpose |
 |------|---------|
-| [PATTERNS.md](PATTERNS.md) | The core collection of all prompt patterns |
+| [PATTERNS.md](PATTERNS.md) | The core collection of all active prompt patterns |
+| [OBSOLETE_PATTERNS.md](OBSOLETE_PATTERNS.md) | Archived patterns now largely baked into modern LLMs |
 | [GLOSSARY.md](GLOSSARY.md) | Definitions for technical jargon used across the patterns |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | Formatting and style guidelines for contributors |
 
@@ -21,7 +22,7 @@ Based on the [Prompt Engineering for ChatGPT](https://www.coursera.org/learn/pro
 Each pattern entry follows a rigid scientific template:
 
 - **Category** — A tag describing the pattern's primary domain (see table below).
-- **Usability** — A 1–5 star rating reflecting how broadly useful the pattern is across different tasks.
+- **Usability** — A 1–5 star rating (see [Usability Scale](#usability-scale)).
 - **Definition** — A concise mechanical explanation of what the pattern does.
 - **Use Case** — Relatable scenarios explaining *why* you would use it.
 - **Modifiers** *(optional)* — Extra toggles or variations you can add to the base pattern.
@@ -52,13 +53,23 @@ Each pattern entry follows a rigid scientific template:
 
 ## Usability Scale
 
-| Rating | Meaning |
-|--------|---------|
-| ★★★★★ | Universal — useful in almost any prompting scenario |
-| ★★★★☆ | Broadly useful — fits many common tasks |
-| ★★★☆☆ | Situational — powerful when applicable, niche otherwise |
-| ★★☆☆☆ | Specialized — requires specific context to be effective |
-| ★☆☆☆☆ | Experimental — cutting-edge or highly domain-specific |
+The rating reflects three combined factors:
+
+| Factor | Question |
+|--------|----------|
+| **Productive Value** | Does explicitly using this pattern unlock meaningfully better output than a naive prompt? |
+| **LLM-Native?** | Is this behavior already baked into modern LLMs (2024+), reducing the need to explicitly prompt it? |
+| **Breadth** | How many different domains/tasks does this pattern apply to? |
+
+| Rating | Criteria |
+|--------|----------|
+| ★★★★★ | High productive value + NOT LLM-native + broad applicability |
+| ★★★★☆ | High productive value + may be partially LLM-native OR slightly narrower applicability |
+| ★★★☆☆ | Moderate productive value OR substantially LLM-native (diminished returns from explicit use) |
+| ★★☆☆☆ | Mostly LLM-native now OR requires very specific context to provide value |
+| ★☆☆☆☆ | Fully LLM-native / obsolete — explicit prompting provides negligible improvement |
+
+> Patterns rated ★★☆☆☆ or ★☆☆☆☆ are archived in [OBSOLETE_PATTERNS.md](OBSOLETE_PATTERNS.md).
 
 ---
 
@@ -68,20 +79,29 @@ Each pattern entry follows a rigid scientific template:
 |---|---------|----------|-----------|
 | 0 | [Combining Patterns](PATTERNS.md#combining-patterns) | *Meta-concept* | — |
 | 1 | [The Persona Pattern](PATTERNS.md#the-persona-pattern) | `Roleplay / Jailbreak` | ★★★★★ |
-| 2 | [The Audience Persona Pattern](PATTERNS.md#the-audience-persona-pattern) | `Translation / Teaching` | ★★★★★ |
-| 3 | [The Question Refinement Pattern](PATTERNS.md#the-question-refinement-pattern) | `Optimization` | ★★★☆☆ |
-| 4 | [The Cognitive Verifier Pattern](PATTERNS.md#the-cognitive-verifier-pattern-aka-the-akinator-prompt) | `Advanced Reasoning` | ★★★★☆ |
-| 5 | [The Flipped Interaction Pattern](PATTERNS.md#the-flipped-interaction-pattern) | `Planning / Teaching` | ★★★★☆ |
-| 6 | [Few-Shot Prompting](PATTERNS.md#few-shot-prompting) | `Formatting / Training` | ★★★★☆ |
-| 7 | [Chain of Thought Prompting](PATTERNS.md#chain-of-thought-prompting) | `Advanced Reasoning` | ★★★☆☆ |
-| 8 | [ReAct Prompting](PATTERNS.md#react-reason--act-prompting) | `Advanced Reasoning / Agents` | ★★★★☆ |
-| 9 | [The Game Play Pattern](PATTERNS.md#the-game-play-pattern) | `Interactive / Teaching` | ★★★★★ |
-| 10 | [The Template Pattern](PATTERNS.md#the-template-pattern) | `Formatting` | ★★★★★ |
-| 11 | [The Meta Language Creation Pattern](PATTERNS.md#the-meta-language-creation-pattern) | `Workflow / Vibecode` | ★★★★★ |
-| 12 | [The Recipe Pattern](PATTERNS.md#the-recipe-pattern) | `Planning` | ★★★★☆ |
-| 13 | [The Alternative Approaches Pattern](PATTERNS.md#the-alternative-approaches-pattern) | `Exploration / Brainstorming` | ★★★★☆ |
-| 14 | [The Ask for Input Pattern](PATTERNS.md#the-ask-for-input-pattern) | `Workflow / Batch Processing` | ★★★★★ |
-| 15 | [The Outline Expansion Pattern](PATTERNS.md#the-outline-expansion-pattern) | `Planning / Brainstorming` | ★★★★☆ |
+| 2 | [The Audience Persona Pattern](PATTERNS.md#the-audience-persona-pattern) | `Translation / Teaching` | ★★★★☆ |
+| 3 | [The Cognitive Verifier Pattern](PATTERNS.md#the-cognitive-verifier-pattern-aka-the-akinator-prompt) | `Advanced Reasoning` | ★★★★☆ |
+| 4 | [The Flipped Interaction Pattern](PATTERNS.md#the-flipped-interaction-pattern) | `Planning / Teaching` | ★★★★★ |
+| 5 | [Few-Shot Prompting](PATTERNS.md#few-shot-prompting) | `Formatting / Training` | ★★★★★ |
+| 6 | [ReAct Prompting](PATTERNS.md#react-reason--act-prompting) | `Advanced Reasoning / Agents` | ★★★☆☆ |
+| 7 | [The Game Play Pattern](PATTERNS.md#the-game-play-pattern) | `Interactive / Teaching` | ★★★★★ |
+| 8 | [The Template Pattern](PATTERNS.md#the-template-pattern) | `Formatting` | ★★★★★ |
+| 9 | [The Meta Language Creation Pattern](PATTERNS.md#the-meta-language-creation-pattern) | `Workflow / Vibecode` | ★★★★★ |
+| 10 | [The Recipe Pattern](PATTERNS.md#the-recipe-pattern) | `Planning` | ★★★☆☆ |
+| 11 | [The Alternative Approaches Pattern](PATTERNS.md#the-alternative-approaches-pattern) | `Exploration / Brainstorming` | ★★★☆☆ |
+| 12 | [The Ask for Input Pattern](PATTERNS.md#the-ask-for-input-pattern) | `Workflow / Batch Processing` | ★★★★★ |
+| 13 | [The Outline Expansion Pattern](PATTERNS.md#the-outline-expansion-pattern) | `Planning / Brainstorming` | ★★★★☆ |
+| 14 | [The Menu Actions Pattern](PATTERNS.md#the-menu-actions-pattern) | `Workflow / Batch Processing` | ★★★★★ |
+| 15 | [The Fact Check List Pattern](PATTERNS.md#the-fact-check-list-pattern) | `Optimization` | ★★★★☆ |
+| 16 | [The Semantic Filter Pattern](PATTERNS.md#the-semantic-filter-pattern) | `Optimization` | ★★★★☆ |
+
+### Archived Patterns
+
+| Pattern | Category | Usability | Why Archived |
+|---------|----------|-----------|--------------|
+| [The Question Refinement Pattern](OBSOLETE_PATTERNS.md#the-question-refinement-pattern) | `Optimization` | ★★☆☆☆ | LLMs routinely clarify questions by default |
+| [Chain of Thought Prompting](OBSOLETE_PATTERNS.md#chain-of-thought-prompting) | `Advanced Reasoning` | ★★☆☆☆ | Reasoning models do this natively |
+| [The Tail Generation Pattern](OBSOLETE_PATTERNS.md#the-tail-generation-pattern) | `Workflow / Batch Processing` | ★☆☆☆☆ | LLMs repeat context and ask follow-ups by default |
 
 ---
 
