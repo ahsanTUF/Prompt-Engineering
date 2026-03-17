@@ -19,7 +19,7 @@ Here is my entire Express.js server:
 
 [paste 200 lines of code]
 
-Find the route that is vulnerable to SQL injection and fix it. Explain what was wrong.
+Find the route that is vulnerable to **[SQL injection](GLOSSARY.md#sql-injection)** and fix it. Explain what was wrong.
 ```
 ##### Example 2: Creative / Shower Thought
 ```text
@@ -262,7 +262,7 @@ We are going to play a debate game. You will act as the devil's advocate for any
 
 ##### Example 1: Technical / Vibecoding
 ```text
-Step 1: List the 5 most common security vulnerabilities in a REST API.
+Step 1: List the 5 most common security vulnerabilities in a **[REST API](GLOSSARY.md#rest-api)**.
 Step 2: For each vulnerability, write a one-line fix in Node.js.
 Step 3: Generate a checklist I can paste into my PR template.
 ```
@@ -333,7 +333,7 @@ Ask me for what historical era, mythology, or fictional universe I would like to
 
 ##### Example 1: Technical / Vibecoding
 ```text
-Write a Python function that validates an email address using regex. Now critique your own function for edge cases it would miss. Rewrite it based on your critique.
+Write a Python function that validates an email address using **[regex](GLOSSARY.md#regex)**. Now critique your own function for edge cases it would miss. Rewrite it based on your critique.
 ```
 ##### Example 2: Creative / Shower Thought
 ```text
@@ -419,7 +419,7 @@ Filter this long, rambling email from my landlord to remove redundant informatio
 
 ##### Example 1: Technical / Vibecoding
 ```text
-Simulate a debate between a cybersecurity expert, a UX designer, and a performance engineer about whether to add CAPTCHA to our login form. Each persona should argue from their domain expertise. After the debate, provide a summary recommendation with trade-offs.
+Simulate a debate between a cybersecurity expert, a UX designer, and a performance engineer about whether to add **[CAPTCHA](GLOSSARY.md#captcha)** to our login form. Each persona should argue from their domain expertise. After the debate, provide a summary recommendation with trade-offs.
 ```
 ##### Example 2: Creative / Shower Thought
 ```text
@@ -483,7 +483,7 @@ I believe the best way to handle negative interactions online is to completely i
 - Prompting the **[LLM](GLOSSARY.md#llm)** to alternate between generating reasoning traces (thoughts) and executing task-specific actions (such as querying a database or using an API).
 
 ###### 💡 Use Case
-- This can be used for creating autonomous agents that must gather dynamic information, evaluate it, and take subsequent steps to solve multi-part problems that a static model cannot handle alone. 
+- This can be used for creating autonomous **[agents](GLOSSARY.md#agent)** that must gather dynamic information, evaluate it, and take subsequent steps to solve multi-part problems that a static model cannot handle alone. 
 - This is actively used in VSCode's Github Copilot and Google's Antigravity and other **[vibecoding](GLOSSARY.md#vibecoding)** applications.
 
 ##### Example 1: Technical / Vibecoding
