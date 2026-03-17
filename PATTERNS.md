@@ -302,7 +302,7 @@ My question: If we eventually discover how to upload human consciousness to a co
 **Category:** `Planning / Brainstorming` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Commanding the [LLM](GLOSSARY.md#llm) to act as an outline expander. It generates a bullet point outline based on input you give it, then uses the [Ask for Input](#7-the-ask-for-input-pattern) pattern to ask you which bullet point it should expand into a *new* outline.
+- Commanding the [LLM](GLOSSARY.md#llm) to act as an outline expander. It generates a bullet point outline based on input you give it, then uses the [Ask for Input](#the-ask-for-input-pattern) pattern to ask you which bullet point it should expand into a *new* outline.
 
 ###### 💡 Use Case
 - Perfect for systematically breaking down massive, sprawling topics (like a thesis paper or a massive game design document) into digestible, expanding trees of information without getting overwhelmed.
@@ -415,7 +415,7 @@ Filter this long, rambling email from my landlord to remove redundant informatio
 - Instructing the [LLM](GLOSSARY.md#llm) to simulate multiple expert personas that debate or discuss a topic from their respective professional angles, then synthesize a consensus or summary recommendation.
 
 ###### 💡 Use Case
-- Unlike the [Persona Pattern](#2-the-persona-pattern) which adopts ONE role, this forces the model to argue from MULTIPLE conflicting perspectives simultaneously, yielding deeper analysis and surfacing trade-offs a single perspective would miss.
+- Unlike the [Persona Pattern](#the-persona-pattern) which adopts ONE role, this forces the model to argue from MULTIPLE conflicting perspectives simultaneously, yielding deeper analysis and surfacing trade-offs a single perspective would miss.
 
 ##### Example 1: Technical / Vibecoding
 ```text

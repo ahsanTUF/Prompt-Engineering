@@ -32,8 +32,10 @@ jobs:
           ---
           title: "The Prompt Engineering Handbook"
           subtitle: "21 Battle-Tested Patterns — From Beginner to Advanced"
-          author: "Based on the Vanderbilt University Coursera Course"
+          author: "Based on the Vanderbilt University Coursera Course \\\\ Compiled by [ahsanTUF](https://github.com/ahsanTUF)"
           date: "$(date +'%B %d, %Y')"
+          fallback-fonts:
+            - "DejaVu Sans"
           titlepage: true
           titlepage-color: "1a1a2e"
           titlepage-text-color: "e94560"
