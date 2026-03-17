@@ -50,16 +50,11 @@ jobs:
           listings: true
           listings-no-page-break: true
           code-block-font-size: \scriptsize
-          header-includes:
-            - \usepackage{fancyhdr}
-            - \pagestyle{fancy}
-            - \fancyhead[L]{\small Prompt Engineering Handbook}
-            - \fancyhead[R]{\small\thepage}
-            - \fancyfoot[C]{}
-            - \renewcommand{\headrulewidth}{0.4pt}
-            - \usepackage{awesomebox}
+          header-left: "Prompt Engineering Handbook"
+          header-right: "\\thepage"
           footer-left: "Prompt Engineering Patterns"
-          footer-right: "Page \\thepage"
+          footer-center: ""
+          footer-right: ""
           book: true
           classoption: oneside
           ---
