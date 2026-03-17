@@ -2,7 +2,7 @@
 
 Patterns archived here have been **largely integrated into modern LLMs** (2024+). Explicitly prompting them provides negligible improvement over a naive prompt. They remain documented for historical and educational context.
 
-> See [PATTERNS.md](PATTERNS.md) for all active patterns, and [README.md](README.md) for the full rating rubric.
+> See **[PATTERNS.md](PATTERNS.md)** for all active patterns, and **[README.md](README.md)** for the full rating rubric.
 
 ---
 
@@ -10,7 +10,7 @@ Patterns archived here have been **largely integrated into modern LLMs** (2024+)
 **Category:** `Optimization` · **Usability:** ★★☆☆☆
 
 ###### 📖 Definition
-- Giving a root prompt to an [LLM](GLOSSARY.md#llm) to refine your question for you and then optionally proceed with that improved query as input.
+- Giving a root prompt to an **[LLM](GLOSSARY.md#llm)** to refine your question for you and then optionally proceed with that improved query as input.
 
 ###### 💡 Use Case
 - You can uncover some unasked for but useful information with this technique. Its purpose is to improve interaction with the specific LLM.
@@ -33,11 +33,11 @@ Whenever I ask a question about who is the greatest of all time (GOAT), suggest 
 **Category:** `Advanced Reasoning` · **Usability:** ★★☆☆☆
 
 ###### 📖 Definition
-- A type of [few-shot](GLOSSARY.md#few-shot) prompting, but instead of making rules and answering them in the prompt, we use developed queries, answer them along with provided *reasoning*, and then prompt the [LLM](GLOSSARY.md#llm) to answer a different query with reasoning attached to it.
+- A type of **[few-shot](GLOSSARY.md#few-shot)** prompting, but instead of making rules and answering them in the prompt, we use developed queries, answer them along with provided *reasoning*, and then prompt the **[LLM](GLOSSARY.md#llm)** to answer a different query with reasoning attached to it.
 
 ###### 💡 Use Case
 - Probably obsolete in the current era of reasoning LLMs, but a use could still be found for this technique.
-- Still an excellent pattern when you want to force the AI to document its exact logical steps when debugging intricate [state machines](GLOSSARY.md#state-machine) or story lore inconsistencies.
+- Still an excellent pattern when you want to force the AI to document its exact logical steps when debugging intricate **[state machines](GLOSSARY.md#state-machine)** or story lore inconsistencies.
 
 ###### 🕰️ Why Obsolete?
 - Reasoning-first models (OpenAI o-series, Google Gemini 2.5 Pro) perform chain-of-thought natively, with or without explicit prompting.
@@ -65,7 +65,7 @@ Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more,
 **Category:** `Workflow / Batch Processing` · **Usability:** ★☆☆☆☆
 
 ###### 📖 Definition
-- Instructing the [LLM](GLOSSARY.md#llm) to repeat a specific piece of context and/or ask for a specific input at the end of every response, ensuring continuity across a multi-turn conversation.
+- Instructing the **[LLM](GLOSSARY.md#llm)** to repeat a specific piece of context and/or ask for a specific input at the end of every response, ensuring continuity across a multi-turn conversation.
 
 ###### 💡 Use Case
 - Originally useful for keeping the AI "on track" across long conversations by forcing it to re-state your options or ask a follow-up.

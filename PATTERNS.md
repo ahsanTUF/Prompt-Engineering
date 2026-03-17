@@ -1,6 +1,6 @@
 # Prompt Patterns
 
-> Ordered by usefulness (most universally useful first). See [README.md](README.md) for the rating rubric.
+> Ordered by usefulness (most universally useful first). See **[README.md](README.md)** for the rating rubric.
 
 ---
 
@@ -11,7 +11,7 @@
 - Front-loading the prompt with a large block of raw context — code, documentation, data, conversation history, or any other reference material — and then issuing a specific instruction that operates on that context.
 
 ###### 💡 Use Case
-- The single most fundamental [vibecoding](GLOSSARY.md#vibecoding) pattern. The [LLM](GLOSSARY.md#llm) cannot access your files, codebase, or private data unless you explicitly paste it into the prompt. Every "here's my code, fix it" interaction is this pattern.
+- The single most fundamental **[vibecoding](GLOSSARY.md#vibecoding)** pattern. The **[LLM](GLOSSARY.md#llm)** cannot access your files, codebase, or private data unless you explicitly paste it into the prompt. Every "here's my code, fix it" interaction is this pattern.
 
 ##### Example 1: Technical / Vibecoding
 ```text
@@ -36,7 +36,7 @@ Critique it for logical flow, emotional impact, and any clichés. Then rewrite t
 **Category:** `Roleplay / Jailbreak` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+- Getting an **[LLM](GLOSSARY.md#llm)** to roleplay as a specific person with a specific designation. A lot of **[jailbreaking](GLOSSARY.md#jailbreaking)** is done through this.
 
 ###### 💡 Use Case
 - Bypass rigid constraints or frame technical guidance through a creative lens — like having a brutally honest senior game dev mentor.
@@ -56,7 +56,7 @@ Act as a speech therapist and tell me what a 3 year old meant when he said, "I n
 **Category:** `Formatting / Training` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Giving the [LLM](GLOSSARY.md#llm) some actual examples of prompt and output nested in the actual prompt, and using that, get it to solve a similar prompt. ([See also: zero-shot](GLOSSARY.md#zero-shot)).
+- Giving the **[LLM](GLOSSARY.md#llm)** some actual examples of prompt and output nested in the actual prompt, and using that, get it to solve a similar prompt. (**[See also: zero-shot](GLOSSARY.md#zero-shot)**).
 
 ###### 💡 Use Case
 - Could be used in "training" an LLM inside of a specific conversation to get it to solve problems that otherwise it couldn't solve efficiently and/or wouldn't have the context for solving them.
@@ -85,7 +85,7 @@ Action:
 **Category:** `Formatting` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Providing a specific template and placeholder format for the [LLM](GLOSSARY.md#llm) to structure its output.
+- Providing a specific template and placeholder format for the **[LLM](GLOSSARY.md#llm)** to structure its output.
 
 ###### 💡 Use Case
 - You must define the placeholder format (e.g., "CAPITALIZED WORDS" or `<PLACEHOLDER>`), provide the actual template, and instruct the LLM to preserve the formatting. 
@@ -116,7 +116,7 @@ MECHANIC_NAME, PLAYER_ACTION, EMOTIONAL_PAYOFF (why it feels satisfying), IMPLEM
 **Category:** `Optimization` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Explicitly telling the [LLM](GLOSSARY.md#llm) what it should NOT do, NOT include, or NOT produce in its output. Instead of only guiding towards desired output, you define the boundaries of undesired output.
+- Explicitly telling the **[LLM](GLOSSARY.md#llm)** what it should NOT do, NOT include, or NOT produce in its output. Instead of only guiding towards desired output, you define the boundaries of undesired output.
 
 ###### 💡 Use Case
 - LLMs often over-include information, add unsolicited disclaimers, or follow stylistic habits the user doesn't want. This pattern is not LLM-native — the model cannot know your negative constraints without being told.
@@ -136,11 +136,11 @@ Explain quantum entanglement. Do NOT use analogies, do NOT say "in simple terms"
 **Category:** `Planning / Teaching` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Prompting the [LLM](GLOSSARY.md#llm) to ask *you* questions about a topic X, and when it has ample knowledge, it can draft a personalized response about another related query Y you ask it.
+- Prompting the **[LLM](GLOSSARY.md#llm)** to ask *you* questions about a topic X, and when it has ample knowledge, it can draft a personalized response about another related query Y you ask it.
 
 ###### 💡 Use Case
 - This can be useful for creating routines, schedules, or any other sort of plan or guide.
-- Ideal for when you want the AI to design a personalized learning path for you, or interview you to extract the exact requirements for a [vibecoding](GLOSSARY.md#vibecoding) project.
+- Ideal for when you want the AI to design a personalized learning path for you, or interview you to extract the exact requirements for a **[vibecoding](GLOSSARY.md#vibecoding)** project.
 
 ##### Example 1: Technical / Vibecoding
 ```text
@@ -157,7 +157,7 @@ Give me numbered questions about football (soccer) for me to answer all at once,
 **Category:** `Workflow / Batch Processing` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Telling the [LLM](GLOSSARY.md#llm) exactly what behavior you want it to adopt for a repeated task, and then instructing it to "Ask me for input X" so it pauses and waits for you to drive the conversation.
+- Telling the **[LLM](GLOSSARY.md#llm)** exactly what behavior you want it to adopt for a repeated task, and then instructing it to "Ask me for input X" so it pauses and waits for you to drive the conversation.
 
 ###### 💡 Use Case
 - While seemingly simple, it is incredibly useful for setting up continuous, batch-processing workflows where you don't want to repeat your lengthy instructions every time you paste new information.
@@ -181,7 +181,7 @@ From now on, translate anything I write into a series of sounds and actions from
 
 ###### 💡 Use Case
 - This can be useful for establishing quick shorthands for repetitive prompting tasks or for creating structured frameworks, such as a task dependency tracker. 
-- Extremely powerful for establishing efficient workflows while [vibecoding](GLOSSARY.md#vibecoding).
+- Extremely powerful for establishing efficient workflows while **[vibecoding](GLOSSARY.md#vibecoding)**.
 
 ##### Example 1: Technical / Vibecoding
 ```text
@@ -204,7 +204,7 @@ Usage: "translate_to_art(The concept of object-oriented inheritance)"
 **Category:** `Workflow / Batch Processing` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Telling the [LLM](GLOSSARY.md#llm) to set up a specific list of actions or commands, each triggered by a specific keyword or phrase you type, forming a persistent textual "menu".
+- Telling the **[LLM](GLOSSARY.md#llm)** to set up a specific list of actions or commands, each triggered by a specific keyword or phrase you type, forming a persistent textual "menu".
 
 ###### 💡 Use Case
 - Incredibly useful for building custom productivity tools or long-running interactive sessions where you need the AI to perform distinct, complex tasks predictably based on short trigger words.
@@ -233,7 +233,7 @@ At the end, you will ask me for the next action. Ask me for the first action.
 **Category:** `Interactive / Teaching` · **Usability:** ★★★★★
 
 ###### 📖 Definition
-- Telling the [LLM](GLOSSARY.md#llm) to create and play a game with you based on a specific topic and fundamental rules.
+- Telling the **[LLM](GLOSSARY.md#llm)** to create and play a game with you based on a specific topic and fundamental rules.
 
 ###### 💡 Use Case
 - You must specify the topic (e.g., "math" or "cave exploration") and provide rules on how the game operates and what actions you can take. 
@@ -257,7 +257,7 @@ We are going to play a debate game. You will act as the devil's advocate for any
 - Breaking a complex task into a sequence of discrete prompts, where each prompt's output becomes the input or context for the next. Each link in the chain handles one focused sub-task. This is the generalized form of *combining* multiple prompt patterns — instead of cramming everything into one monolithic prompt, you architect a pipeline.
 
 ###### 💡 Use Case
-- The backbone of all [vibecoding](GLOSSARY.md#vibecoding) workflows and agentic tool use. Placement matters: for example, the **Ask for Input** pattern usually needs to be the final link in the chain to force the AI to pause and wait.
+- The backbone of all **[vibecoding](GLOSSARY.md#vibecoding)** workflows and agentic tool use. Placement matters: for example, the **Ask for Input** pattern usually needs to be the final link in the chain to force the AI to pause and wait.
 - Think of it as programming with prompts — you are assembling known, reliable instructions into a sequence to solve a complex problem without reinventing the wheel.
 
 ##### Example 1: Technical / Vibecoding
@@ -279,7 +279,7 @@ Step 3: Write the introduction and conclusion only.
 **Category:** `Advanced Reasoning` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Prompting the [LLM](GLOSSARY.md#llm) to break your initial query down into multiple sub-queries that, when combined and answered, can produce a better answer to the initial general question.
+- Prompting the **[LLM](GLOSSARY.md#llm)** to break your initial query down into multiple sub-queries that, when combined and answered, can produce a better answer to the initial general question.
 
 ###### 💡 Use Case
 - It can be used for effectively answering "shower thoughts" and other general philosophy inclined queries.
@@ -302,7 +302,7 @@ My question: If we eventually discover how to upload human consciousness to a co
 **Category:** `Planning / Brainstorming` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Commanding the [LLM](GLOSSARY.md#llm) to act as an outline expander. It generates a bullet point outline based on input you give it, then uses the [Ask for Input](#the-ask-for-input-pattern) pattern to ask you which bullet point it should expand into a *new* outline.
+- Commanding the **[LLM](GLOSSARY.md#llm)** to act as an outline expander. It generates a bullet point outline based on input you give it, then uses the **[Ask for Input](#the-ask-for-input-pattern)** pattern to ask you which bullet point it should expand into a *new* outline.
 
 ###### 💡 Use Case
 - Perfect for systematically breaking down massive, sprawling topics (like a thesis paper or a massive game design document) into digestible, expanding trees of information without getting overwhelmed.
@@ -326,7 +326,7 @@ Ask me for what historical era, mythology, or fictional universe I would like to
 **Category:** `Optimization` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Asking the [LLM](GLOSSARY.md#llm) to produce an output, then immediately instructing it to critique and improve its own output in the same conversation, iterating until the quality is satisfactory.
+- Asking the **[LLM](GLOSSARY.md#llm)** to produce an output, then immediately instructing it to critique and improve its own output in the same conversation, iterating until the quality is satisfactory.
 
 ###### 💡 Use Case
 - Extremely useful for writing, code generation, and design work where the first draft is rarely the best. Forces the model to act as its own editor, catching errors and improving quality without you having to specify what's wrong.
@@ -346,7 +346,7 @@ Write a product description for a noise-cancelling headset aimed at remote worke
 **Category:** `Optimization` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Instructing the [LLM](GLOSSARY.md#llm) to isolate and explicitly list the fundamental facts contained within its output, placing them at a specific position.
+- Instructing the **[LLM](GLOSSARY.md#llm)** to isolate and explicitly list the fundamental facts contained within its output, placing them at a specific position.
 
 ###### 💡 Use Case
 - Crucial when generating factual articles, documentation, or code explanations where incorrect assumptions could undermine the entire output's veracity (e.g., getting a historical date or an API version wrong).
@@ -369,7 +369,7 @@ Whenever you output a summary of a historical event, generate a set of facts tha
 **Category:** `Translation / Teaching` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Telling the [LLM](GLOSSARY.md#llm) to treat *you* as a specified person in order to answer your query. This is the most common prompt pattern used unknowingly by people who use generative AI.
+- Telling the **[LLM](GLOSSARY.md#llm)** to treat *you* as a specified person in order to answer your query. This is the most common prompt pattern used unknowingly by people who use generative AI.
 
 ###### 💡 Use Case
 - Incredibly effective when you need complex topics translated into the language of your specific background (like traditional art or game dev jargon).
@@ -389,7 +389,7 @@ Explain LLMs to me assuming that I am a swashbuckling pirate.
 **Category:** `Optimization` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Instructing the [LLM](GLOSSARY.md#llm) to explicitly filter the final output to remove specific types of semantic information ("X").
+- Instructing the **[LLM](GLOSSARY.md#llm)** to explicitly filter the final output to remove specific types of semantic information ("X").
 
 ###### 💡 Use Case
 - Useful for data sanitization (like stripping out Personally Identifiable Information before saving a log) or aggressively removing fluff/redundancy from long texts.
@@ -412,10 +412,10 @@ Filter this long, rambling email from my landlord to remove redundant informatio
 **Category:** `Advanced Reasoning` · **Usability:** ★★★★☆
 
 ###### 📖 Definition
-- Instructing the [LLM](GLOSSARY.md#llm) to simulate multiple expert personas that debate or discuss a topic from their respective professional angles, then synthesize a consensus or summary recommendation.
+- Instructing the **[LLM](GLOSSARY.md#llm)** to simulate multiple expert personas that debate or discuss a topic from their respective professional angles, then synthesize a consensus or summary recommendation.
 
 ###### 💡 Use Case
-- Unlike the [Persona Pattern](#the-persona-pattern) which adopts ONE role, this forces the model to argue from MULTIPLE conflicting perspectives simultaneously, yielding deeper analysis and surfacing trade-offs a single perspective would miss.
+- Unlike the **[Persona Pattern](#the-persona-pattern)** which adopts ONE role, this forces the model to argue from MULTIPLE conflicting perspectives simultaneously, yielding deeper analysis and surfacing trade-offs a single perspective would miss.
 
 ##### Example 1: Technical / Vibecoding
 ```text
@@ -432,7 +432,7 @@ Simulate a debate between a philosopher, a neuroscientist, and a Buddhist monk a
 **Category:** `Planning` · **Usability:** ★★★☆☆
 
 ###### 📖 Definition
-- Stating a desired end goal ("X") and providing a few necessary steps (A, B, C) you already know, then prompting the [LLM](GLOSSARY.md#llm) to provide a complete, chronological sequence of steps.
+- Stating a desired end goal ("X") and providing a few necessary steps (A, B, C) you already know, then prompting the **[LLM](GLOSSARY.md#llm)** to provide a complete, chronological sequence of steps.
 
 ###### 💡 Use Case
 - Extremely useful for planning out complex new projects or learning paths where you know the broad strokes but need the nuanced, step-by-step roadmap.
@@ -455,10 +455,10 @@ I would like to finally understand why humans experience 'déjà vu' despite hav
 **Category:** `Exploration / Brainstorming` · **Usability:** ★★★☆☆
 
 ###### 📖 Definition
-- Telling the [LLM](GLOSSARY.md#llm) that if there are alternative ways to accomplish a task ("X") that you give it, it should list the best alternate approaches instead of just blindly doing what you asked.
+- Telling the **[LLM](GLOSSARY.md#llm)** that if there are alternative ways to accomplish a task ("X") that you give it, it should list the best alternate approaches instead of just blindly doing what you asked.
 
 ###### 💡 Use Case
-- Incredible for [vibecoding](GLOSSARY.md#vibecoding) when you don't know the "right" way to build something, or for exploring deeply nuanced philosophical questions from multiple angles.
+- Incredible for **[vibecoding](GLOSSARY.md#vibecoding)** when you don't know the "right" way to build something, or for exploring deeply nuanced philosophical questions from multiple angles.
 
 ###### ⚙️ Modifiers (Optional)
 - Ask the AI to compare/contrast the pros and cons of each approach.
@@ -480,11 +480,11 @@ I believe the best way to handle negative interactions online is to completely i
 **Category:** `Advanced Reasoning / Agents` · **Usability:** ★★★☆☆
 
 ###### 📖 Definition
-- Prompting the [LLM](GLOSSARY.md#llm) to alternate between generating reasoning traces (thoughts) and executing task-specific actions (such as querying a database or using an API).
+- Prompting the **[LLM](GLOSSARY.md#llm)** to alternate between generating reasoning traces (thoughts) and executing task-specific actions (such as querying a database or using an API).
 
 ###### 💡 Use Case
 - This can be used for creating autonomous agents that must gather dynamic information, evaluate it, and take subsequent steps to solve multi-part problems that a static model cannot handle alone. 
-- This is actively used in VSCode's Github Copilot and Google's Antigravity and other [vibecoding](GLOSSARY.md#vibecoding) applications.
+- This is actively used in VSCode's Github Copilot and Google's Antigravity and other **[vibecoding](GLOSSARY.md#vibecoding)** applications.
 
 ##### Example 1: Technical / Vibecoding
 ```text

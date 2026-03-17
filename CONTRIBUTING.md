@@ -87,7 +87,7 @@ If your pattern introduces a technical term not already in `GLOSSARY.md`, add it
 
 Link the term on its first use in your pattern's definition:
 ```markdown
-- Getting an [LLM](GLOSSARY.md#llm) to roleplay...
+- Getting an **[LLM](GLOSSARY.md#llm)** to roleplay...
 ```
 
 ---

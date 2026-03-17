@@ -1,6 +1,6 @@
 # Prompt Engineering Glossary
 
-Definitions for technical terms used across the [Prompt Patterns](PATTERNS.md) repository. All terms are listed alphabetically.
+Definitions for technical terms used across the **[Prompt Patterns](PATTERNS.md)** repository. All terms are listed alphabetically.
 
 ---
 
