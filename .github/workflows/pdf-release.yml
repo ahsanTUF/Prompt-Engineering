@@ -35,10 +35,7 @@ jobs:
           author: "Based on the Vanderbilt University Coursera Course \\\\ Compiled by [ahsanTUF](https://github.com/ahsanTUF)"
           date: "$(date +'%B %d, %Y')"
           header-includes:
-            - \usepackage{newunicodechar}
             - \usepackage{pifont}
-            - \newunicodechar{★}{\ding{72}}
-            - \newunicodechar{☆}{\ding{73}}
           titlepage: true
           titlepage-color: "FFCC00"
           titlepage-text-color: "0A192F"
@@ -76,6 +73,10 @@ jobs:
 
           # Strip GitHub-specific emojis that clutter a formal PDF
           sed -i 's/📖 //g; s/💡 //g; s/⚙️ //g; s/🕰️ //g; s/📋 //g' PDF.md
+
+          # Translate Unicode stars into bulletproof LaTeX pifont commands
+          sed -i 's/★/\\ding{72}/g' PDF.md
+          sed -i 's/☆/\\ding{73}/g' PDF.md
 
           # 1. Unify Cross-File Anchors (e.g., PATTERNS.md#2-persona -> #2-persona)
           sed -i -E 's/\([A-Z_]+\.md#/(#/g' PDF.md
