@@ -46,8 +46,6 @@ jobs:
           linkcolor: "e94560"
           urlcolor: "0f3460"
           geometry: "margin=1in"
-          mainfont: "DejaVu Sans"
-          monofont: "DejaVu Sans Mono"
           fontsize: "11pt"
           listings: true
           listings-no-page-break: true
@@ -76,6 +74,14 @@ jobs:
 
           # Strip GitHub-specific emojis that clutter a formal PDF
           sed -i 's/📖 //g; s/💡 //g; s/⚙️ //g; s/🕰️ //g; s/📋 //g' PDF.md
+
+          # Remove file-only navigation lines that are meaningless in a PDF
+          sed -i '/See \[README\.md\]/d' PDF.md
+          sed -i '/See \[PATTERNS\.md\]/d' PDF.md
+
+          # Convert GLOSSARY.md anchor links to internal PDF anchors
+          # e.g. [LLM](GLOSSARY.md#llm) -> [LLM](#llm)
+          sed -i 's|(GLOSSARY\.md#|(#|g' PDF.md
 
       - name: Convert Markdown to PDF with Pandoc + Eisvogel
         uses: docker://pandoc/extra:latest
