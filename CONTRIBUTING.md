@@ -14,23 +14,22 @@ All contributions must follow the guidelines below to maintain consistency acros
 
 ## 2. Pattern Template (Mandatory)
 
-Every pattern entry in `PATTERNS.md` must follow this exact structure to ensure cross-platform aesthetics (GitHub + Obsidian):
+Every pattern entry in `PATTERNS.md` must follow this exact structure:
 
-```markdown
+````markdown
 ---
 
-## The [Pattern Name] Pattern
+## [#]. The [Pattern Name] Pattern
 **Category:** `[Tag]` · **Usability:** [1-5 Stars]
 
 ###### 📖 Definition
-- [Core explanation. Link technical terms to GLOSSARY.md, e.g. [LLM](GLOSSARY.md#llm).]
+- [Core explanation. Link technical terms to GLOSSARY.md.]
 
 ###### 💡 Use Case
 - [Relatable scenario explaining why you would use this pattern.]
-- [Optional second scenario.]
 
 ###### ⚙️ Modifiers (Optional)
-- [Optional variations or toggles the user can add to the base pattern.]
+- [Optional variations or toggles the user can add.]
 
 ##### Example 1: Technical / Vibecoding
 ```text
@@ -40,19 +39,43 @@ Every pattern entry in `PATTERNS.md` must follow this exact structure to ensure 
 ```text
 [Prompt goes here]
 ```
-```
+````
+
+---
 
 ### Rules
 
 1. Use `######` (h6) for Definition, Use Case, and Modifiers labels.
 2. Use `#####` (h5) for Example labels.
-3. Body text under Definition, Use Case, and Modifiers must be formatted as **bullet points** (`- `) to ensure proper indentation and readability without adopting faded blockquote styles.
+3. Body text under Definition, Use Case, and Modifiers must be formatted as **bullet points** (`- `).
 4. Prompts must be inside ` ```text ``` ` code blocks for 1-click copying on GitHub.
 5. Separate each pattern with `---`.
+6. Patterns are **numbered** by usefulness (most useful first within their star tier).
 
 ---
 
-## 3. Glossary
+## 3. Rating New Patterns
+
+Assign a usability rating by answering 3 questions:
+
+| Question | +1 if YES |
+|----------|-----------|
+| Does explicitly using this pattern unlock meaningfully better output than a naive prompt? | **Productive** |
+| Is this behavior NOT baked into modern LLMs (2024+)? | **Not-native** |
+| Does it apply across 3+ different domains/tasks? | **Broad** |
+
+| Score | Rating |
+|-------|--------|
+| 3/3 | ★★★★★ |
+| 2/3 | ★★★★☆ |
+| 1/3 | ★★★☆☆ |
+| 0/3 | Archive to `OBSOLETE_PATTERNS.md` |
+
+Within the same star tier, place the new pattern after existing patterns of the same tier unless it is clearly more frequently used.
+
+---
+
+## 4. Glossary
 
 If your pattern introduces a technical term not already in `GLOSSARY.md`, add it in **alphabetical order** using this format:
 
@@ -69,11 +92,11 @@ Link the term on its first use in your pattern's definition:
 
 ---
 
-## 4. File Reference
+## 5. File Reference
 
 | File | Purpose |
 |------|---------|
-| `PATTERNS.md` | All active prompt pattern entries |
+| `PATTERNS.md` | All active prompt pattern entries (ordered by usefulness) |
 | `OBSOLETE_PATTERNS.md` | Archived patterns now baked into modern LLMs |
 | `GLOSSARY.md` | Technical term definitions |
 | `CONTRIBUTING.md` | This file — formatting rules |
