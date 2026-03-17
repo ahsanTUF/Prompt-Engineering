@@ -206,7 +206,7 @@ Act as a speech therapist and tell me what a 3 year old meant when he said, "I n
 ---
 ---
 
-# Summary Comparison
+# Summary Comparison (Options A-F)
 
 | Feature | A: Card | B: Table | C: Minimalist | D: Badges | E: HTML Card | F: Hybrid |
 |---------|---------|----------|---------------|-----------|--------------|-----------|
@@ -214,4 +214,193 @@ Act as a speech therapist and tell me what a 3 year old meant when he said, "I n
 | Contributor-friendly? | ⚠️ Details tags | ✅ Simple | ✅✅ Easiest | ✅ Copy badge URL | ⚠️ HTML heavy | ✅ Moderate |
 | Copy-able prompts? | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
 | Visual "wow" factor | ⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Works without GitHub? | ✅ | ✅ | ✅ | ⚠️ Needs internet | ⚠️ HTML | ⚠️ Needs internet |
+| Obsidian-friendly? | ⚠️ | ✅ | ✅ | ❌ | ❌ | ❌ |
+
+---
+---
+
+# 🔮 OBSIDIAN-FIRST OPTIONS (G — L)
+*These options use only features that render beautifully in BOTH Obsidian and GitHub: callout boxes (`> [!NOTE]`, `> [!TIP]`, etc.), standard markdown, blockquotes, and horizontal rules. No HTML, no shields.io, no external dependencies.*
+
+---
+---
+
+# Option G: "The Callout Cascade"
+*Each section of the pattern uses a DIFFERENT callout type, creating a colorful cascade of distinct visual blocks. In Obsidian, each callout type renders with a different color and icon. On GitHub, they render as styled alert boxes.*
+
+---
+
+## The Persona Pattern
+`Roleplay / Jailbreak` · `Usability: ★★★★★`
+
+> [!NOTE]
+> **Definition:** Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+> [!TIP]
+> **Use Case:** Bypass rigid constraints or frame technical guidance through a creative lens — like having a brutally honest senior game dev mentor.
+
+> [!IMPORTANT]
+> **Example 1 — Vibecoding**
+> ```text
+> Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+> ```
+
+> [!WARNING]
+> **Example 2 — Shower Thought**
+> ```text
+> Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+> ```
+
+---
+---
+
+# Option H: "The Clean Callout"
+*Uses only ONE callout for the definition. Everything else is pure typography. Minimal, clean, and extremely easy for contributors to replicate.*
+
+---
+
+## The Persona Pattern
+`Roleplay / Jailbreak` · `Usability: ★★★★★`
+
+> [!NOTE]
+> Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+*Useful for bypassing rigid constraints or framing technical guidance through a creative lens — like having a brutally honest senior game dev mentor.*
+
+#### Example 1: Vibecoding
+```text
+Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+```
+
+#### Example 2: Shower Thought
+```text
+Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+```
+
+---
+---
+
+# Option I: "The Textbook"
+*Feels like reading a well-designed textbook. Uses a `[!ABSTRACT]` callout for a short summary, a blockquote for the definition, and `[!EXAMPLE]` callouts for the prompts. Very academic, very structured.*
+
+---
+
+## The Persona Pattern
+
+> [!abstract] Summary
+> Get the AI to *become* someone. `Roleplay / Jailbreak` · `★★★★★`
+
+**Definition:** Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+**Use Case:** Useful for bypassing rigid constraints or framing technical guidance through a creative lens — like having a brutally honest senior game dev mentor.
+
+> [!example] Example 1: Vibecoding
+> ```text
+> Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+> ```
+
+> [!example] Example 2: Shower Thought
+> ```text
+> Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+> ```
+
+---
+---
+
+# Option J: "The Wiki"
+*Maximum readability, maximum contributor-friendliness. Zero fancy features. Just perfect heading hierarchy, horizontal rules, and blockquotes. If someone has never used markdown, they can still contribute.*
+
+---
+
+## The Persona Pattern
+
+**Category:** Roleplay / Jailbreak · **Usability:** ★★★★★
+
+### Definition
+Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+### Use Case
+Useful for bypassing rigid constraints or framing technical guidance through a creative lens — like having a brutally honest senior game dev mentor.
+
+### Example 1: Vibecoding
+```text
+Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+```
+
+### Example 2: Shower Thought
+```text
+Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+```
+
+---
+---
+
+# Option K: "The Dual Callout"
+*Uses `[!NOTE]` for the definition and `[!TIP]` for the use case. Examples stay as clean code blocks with `####` sub-headers. The two colored callout blocks create a strong visual rhythm that repeats predictably across every pattern.*
+
+---
+
+## The Persona Pattern
+`Roleplay / Jailbreak` · `★★★★★`
+
+> [!NOTE]  
+> **Definition:** Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+> [!TIP]
+> **Use Case:** Useful for bypassing rigid constraints or framing technical guidance through a creative lens — like having a brutally honest senior game dev mentor.
+
+#### Example 1: Vibecoding
+```text
+Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+```
+
+#### Example 2: Shower Thought
+```text
+Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+```
+
+---
+---
+
+# Option L: "The Foldable Textbook" (Obsidian-only feature)
+*Uses Obsidian's foldable callouts (`> [!example]-` with the minus sign) so examples are collapsed by default. Readers expand only what they want. NOTE: The foldable feature is Obsidian-only; on GitHub, callouts will render expanded.*
+
+---
+
+## The Persona Pattern
+`Roleplay / Jailbreak` · `★★★★★`
+
+> [!NOTE]
+> **Definition:** Getting an [LLM](GLOSSARY.md#llm) to roleplay as a specific person with a specific designation. A lot of [jailbreaking](GLOSSARY.md#jailbreaking) is done through this.
+
+*Useful for bypassing rigid constraints or framing technical guidance through a creative lens — like having a brutally honest senior game dev mentor.*
+
+> [!example]- Example 1: Vibecoding *(click to expand)*
+> ```text
+> Act as a senior database architect who is brutal, honest, and to the point. Review the schema I am about to paste and tell me exactly why it will fail at scale.
+> ```
+
+> [!example]- Example 2: Shower Thought *(click to expand)*
+> ```text
+> Act as a speech therapist and tell me what a 3 year old meant when he said, "I need way woy."
+> ```
+
+---
+---
+
+# Full Comparison Table (All 12 Options)
+
+| Feature | A | B | C | D | E | F | **G** | **H** | **I** | **J** | **K** | **L** |
+|---------|---|---|---|---|---|---|-------|-------|-------|-------|-------|-------|
+| **Squint-test** | ✅ | ✅ | ⚠️ | ✅✅ | ✅✅✅ | ✅✅ | ✅✅✅ | ✅✅ | ✅✅ | ✅ | ✅✅ | ✅✅ |
+| **Contributor-friendly** | ⚠️ | ✅ | ✅✅ | ✅ | ⚠️ | ✅ | ✅ | ✅✅ | ✅ | ✅✅✅ | ✅✅ | ✅ |
+| **Copy-able prompts** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️* | ✅ | ⚠️* | ✅ | ✅ | ⚠️* |
+| **Visual wow** | ⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
+| **Obsidian** | ⚠️ | ✅ | ✅ | ❌ | ❌ | ❌ | ✅✅✅ | ✅✅✅ | ✅✅✅ | ✅✅✅ | ✅✅✅ | ✅✅✅ |
+| **GitHub** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ⚠️** | ✅ | ✅ | ⚠️*** |
+| **Colorful** | ⚠️ | ❌ | ❌ | ✅✅ | ✅ | ✅✅ | ✅✅✅ | ✅ | ✅✅ | ❌ | ✅✅ | ✅✅ |
+| **Minimalist** | ⚠️ | ✅ | ✅✅✅ | ✅ | ❌ | ✅ | ❌ | ✅✅ | ✅ | ✅✅✅ | ✅✅ | ✅ |
+
+> *\* Code blocks inside callouts lose the GitHub 1-click copy button.*
+> *\*\* `[!abstract]` and `[!example]` are Obsidian-specific callout types; GitHub renders them as generic blockquotes.*
+> *\*\*\* Foldable callouts (`-`) are Obsidian-only; GitHub renders them expanded.*
