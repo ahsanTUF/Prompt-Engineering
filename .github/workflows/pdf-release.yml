@@ -35,16 +35,16 @@ jobs:
           author: "Based on the Vanderbilt University Coursera Course"
           date: "$(date +'%B %d, %Y')"
           titlepage: true
-          titlepage-color: 1a1a2e
-          titlepage-text-color: e94560
-          titlepage-rule-color: 0f3460
+          titlepage-color: "1a1a2e"
+          titlepage-text-color: "e94560"
+          titlepage-rule-color: "0f3460"
           titlepage-rule-height: 2
           toc: true
           toc-own-page: true
           toc-depth: 2
           colorlinks: true
-          linkcolor: e94560
-          urlcolor: 0f3460
+          linkcolor: "Maroon"
+          urlcolor: "MidnightBlue"
           geometry: "margin=1in"
           fontsize: "11pt"
           listings: true
@@ -70,18 +70,17 @@ jobs:
           # Strip GitHub-specific emojis that clutter a formal PDF
           sed -i 's/📖 //g; s/💡 //g; s/⚙️ //g; s/🕰️ //g; s/📋 //g' PDF.md
 
-          # Convert file links into plain text to avoid broken external links in the PDF
-          sed -i 's/\[Prompt Patterns\](PATTERNS\.md)/Prompt Patterns/g' PDF.md
-          sed -i 's/\[README\.md\](README\.md)/README.md/g' PDF.md
-          sed -i 's/\[CONTRIBUTING\.md\](CONTRIBUTING\.md)/CONTRIBUTING.md/g' PDF.md
+          # Convert GLOSSARY.md anchor links to internal PDF anchors FIRST
+          # e.g. [LLM](GLOSSARY.md#llm) -> [LLM](#llm)
+          sed -i 's|(GLOSSARY\.md#|(#|g' PDF.md
+
+          # Completely convert any remaining Markdown file links [Text](file.md) to plain Text
+          sed -i -E 's/\[([^]]+)\]\([^)]+\.md\)/\1/g' PDF.md
           
           # Remove isolated file-only navigation lines entirely
           sed -i '/See README\.md for the rating/d' PDF.md
           sed -i '/See PATTERNS\.md for all active/d' PDF.md
 
-          # Convert GLOSSARY.md anchor links to internal PDF anchors
-          # e.g. [LLM](GLOSSARY.md#llm) -> [LLM](#llm)
-          sed -i 's|(GLOSSARY\.md#|(#|g' PDF.md
 
       - name: Convert Markdown to PDF with Pandoc + Eisvogel
         uses: docker://pandoc/extra:latest
