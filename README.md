@@ -10,9 +10,9 @@ Based on the [Prompt Engineering for ChatGPT](https://www.coursera.org/learn/pro
 
 | File | Purpose |
 |------|---------|
-| [prompt_patterns.md](prompt_patterns.md) | The core collection of all prompt patterns |
+| [PATTERNS.md](PATTERNS.md) | The core collection of all prompt patterns |
 | [GLOSSARY.md](GLOSSARY.md) | Definitions for technical jargon used across the patterns |
-| [CONTRIBUTING.md](CONTRIBUTING.md) | Strict formatting and style guidelines for contributors |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | Formatting and style guidelines for contributors |
 
 ---
 
@@ -66,28 +66,28 @@ Each pattern entry follows a rigid scientific template:
 
 | # | Pattern | Category | Usability |
 |---|---------|----------|-----------|
-| 0 | [Combining Patterns](prompt_patterns.md#combining-patterns) | *Meta-concept* | — |
-| 1 | [The Persona Pattern](prompt_patterns.md#the-persona-pattern) | `Roleplay / Jailbreak` | ★★★★★ |
-| 2 | [The Audience Persona Pattern](prompt_patterns.md#the-audience-persona-pattern) | `Translation / Teaching` | ★★★★★ |
-| 3 | [The Question Refinement Pattern](prompt_patterns.md#the-question-refinement-pattern) | `Optimization` | ★★★☆☆ |
-| 4 | [The Cognitive Verifier Pattern](prompt_patterns.md#the-cognitive-verifier-pattern-aka-the-akinator-prompt) | `Advanced Reasoning` | ★★★★☆ |
-| 5 | [The Flipped Interaction Pattern](prompt_patterns.md#the-flipped-interaction-pattern) | `Planning / Teaching` | ★★★★☆ |
-| 6 | [Few-Shot Prompting](prompt_patterns.md#few-shot-prompting) | `Formatting / Training` | ★★★★☆ |
-| 7 | [Chain of Thought Prompting](prompt_patterns.md#chain-of-thought-prompting) | `Advanced Reasoning` | ★★★☆☆ |
-| 8 | [ReAct Prompting](prompt_patterns.md#react-reason--act-prompting) | `Advanced Reasoning / Agents` | ★★★★☆ |
-| 9 | [The Game Play Pattern](prompt_patterns.md#the-game-play-pattern) | `Interactive / Teaching` | ★★★★★ |
-| 10 | [The Template Pattern](prompt_patterns.md#the-template-pattern) | `Formatting` | ★★★★★ |
-| 11 | [The Meta Language Creation Pattern](prompt_patterns.md#the-meta-language-creation-pattern) | `Workflow / Vibecode` | ★★★★★ |
-| 12 | [The Recipe Pattern](prompt_patterns.md#the-recipe-pattern) | `Planning` | ★★★★☆ |
-| 13 | [The Alternative Approaches Pattern](prompt_patterns.md#the-alternative-approaches-pattern) | `Exploration / Brainstorming` | ★★★★☆ |
-| 14 | [The Ask for Input Pattern](prompt_patterns.md#the-ask-for-input-pattern) | `Workflow / Batch Processing` | ★★★★★ |
-| 15 | [The Outline Expansion Pattern](prompt_patterns.md#the-outline-expansion-pattern) | `Planning / Brainstorming` | ★★★★☆ |
+| 0 | [Combining Patterns](PATTERNS.md#combining-patterns) | *Meta-concept* | — |
+| 1 | [The Persona Pattern](PATTERNS.md#the-persona-pattern) | `Roleplay / Jailbreak` | ★★★★★ |
+| 2 | [The Audience Persona Pattern](PATTERNS.md#the-audience-persona-pattern) | `Translation / Teaching` | ★★★★★ |
+| 3 | [The Question Refinement Pattern](PATTERNS.md#the-question-refinement-pattern) | `Optimization` | ★★★☆☆ |
+| 4 | [The Cognitive Verifier Pattern](PATTERNS.md#the-cognitive-verifier-pattern-aka-the-akinator-prompt) | `Advanced Reasoning` | ★★★★☆ |
+| 5 | [The Flipped Interaction Pattern](PATTERNS.md#the-flipped-interaction-pattern) | `Planning / Teaching` | ★★★★☆ |
+| 6 | [Few-Shot Prompting](PATTERNS.md#few-shot-prompting) | `Formatting / Training` | ★★★★☆ |
+| 7 | [Chain of Thought Prompting](PATTERNS.md#chain-of-thought-prompting) | `Advanced Reasoning` | ★★★☆☆ |
+| 8 | [ReAct Prompting](PATTERNS.md#react-reason--act-prompting) | `Advanced Reasoning / Agents` | ★★★★☆ |
+| 9 | [The Game Play Pattern](PATTERNS.md#the-game-play-pattern) | `Interactive / Teaching` | ★★★★★ |
+| 10 | [The Template Pattern](PATTERNS.md#the-template-pattern) | `Formatting` | ★★★★★ |
+| 11 | [The Meta Language Creation Pattern](PATTERNS.md#the-meta-language-creation-pattern) | `Workflow / Vibecode` | ★★★★★ |
+| 12 | [The Recipe Pattern](PATTERNS.md#the-recipe-pattern) | `Planning` | ★★★★☆ |
+| 13 | [The Alternative Approaches Pattern](PATTERNS.md#the-alternative-approaches-pattern) | `Exploration / Brainstorming` | ★★★★☆ |
+| 14 | [The Ask for Input Pattern](PATTERNS.md#the-ask-for-input-pattern) | `Workflow / Batch Processing` | ★★★★★ |
+| 15 | [The Outline Expansion Pattern](PATTERNS.md#the-outline-expansion-pattern) | `Planning / Brainstorming` | ★★★★☆ |
 
 ---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the mandatory formatting template, tone guidelines, and glossary rules. All contributions must adhere strictly to the established scientific template.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the mandatory formatting template, tone guidelines, and glossary rules.
 
 ---
 
