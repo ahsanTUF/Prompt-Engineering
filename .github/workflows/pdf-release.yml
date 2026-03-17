@@ -33,7 +33,7 @@ jobs:
           title: "The Prompt Engineering Handbook"
           subtitle: "21 Battle-Tested Patterns — From Beginner to Advanced"
           author: "Based on the Vanderbilt University Coursera Course \\\\ Compiled by **[ahsanTUF](https://github.com/ahsanTUF)**"
-          date: "$(date +'%B %d, %Y')"
+          date: "\\today"
           header-includes:
             - \usepackage{pifont}
           titlepage: true
@@ -62,8 +62,8 @@ jobs:
           ---
           FRONTMATTER
 
-          # Append the core pattern files
-          awk '/## 📖 How to Read the Patterns/{flag=1} flag' README.md >> PDF.md
+          # Append the core pattern files (truncate README headers and footers)
+          awk '/## 📖 How to Read the Patterns/{flag=1} /## 🤝 Contributing/{flag=0} flag' README.md >> PDF.md
           printf '\n\\newpage\n\n' >> PDF.md
           cat PATTERNS.md >> PDF.md
           printf '\n\\newpage\n\n' >> PDF.md
@@ -71,17 +71,14 @@ jobs:
           printf '\n\\newpage\n\n' >> PDF.md
           cat GLOSSARY.md >> PDF.md
 
-          # Strip GitHub-specific emojis that clutter a formal PDF (Standard + Complex + U+FE0F/Variation Selectors)
-          sed -i -E 's/[📖💡⚙🕰📋📁🏷⚖🤝📄🗃⭐] ?//g' PDF.md
-          sed -i 's/\xef\xb8\x8f//g' PDF.md
+          # Strip GitHub-specific emojis that clutter a formal PDF (Explicit literal matching bypasses sed multi-byte class issues)
+          sed -i 's/📖//g; s/💡//g; s/⚙//g; s/🕰//g; s/📋//g' PDF.md
+          sed -i 's/📁//g; s/🏷//g; s/⚖//g; s/🤝//g; s/📄//g; s/🗃//g; s/⭐//g' PDF.md
+          perl -pi -e 's/\xef\xb8\x8f//g' PDF.md
 
           # Translate Unicode stars into bulletproof LaTeX pifont commands
           sed -i 's/★/\\ding{72}/g' PDF.md
           sed -i 's/☆/\\ding{73}/g' PDF.md
-
-          # Normalize Pandoc ID formatting for mismatched edge-case anchors
-          sed -i -E 's/#-usability-scale/#usability-scale/g' PDF.md
-          sed -i -E 's/#react-reason--act-prompting/#react-reason-act-prompting/g' PDF.md
 
           # 1. Unify Cross-File Anchors (e.g., PATTERNS.md#2-persona -> #2-persona)
           sed -i -E 's/\([A-Z_]+\.md#/(#/g' PDF.md
@@ -89,7 +86,11 @@ jobs:
           # 2. Match Pandoc Auto-IDs (dynamically strip leading numbers: #2-persona -> #persona)
           sed -i -E 's/\(#([0-9]+-)/\(#/g' PDF.md
 
-          # 3. Strip Dead File Links (clean up remaining file-to-file links lacking anchors)
+          # 3. Normalize Pandoc ID formatting for mismatched edge-case anchors (Must occur AFTER number stripping)
+          sed -i -E 's/#-usability-scale/#usability-scale/g' PDF.md
+          sed -i -E 's/#react-reason--act-prompting/#react-reason-act-prompting/g' PDF.md
+
+          # 4. Strip Dead File Links (clean up remaining file-to-file links lacking anchors)
           sed -i -E 's/\[([^]]+)\]\([^)#]+\.md\)/\1/g' PDF.md
           
           # Remove isolated file-only navigation lines entirely
