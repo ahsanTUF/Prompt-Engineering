@@ -27,44 +27,66 @@ jobs:
 
       - name: Generate Combined Markdown
         run: |
-          # Title Page
-          echo "---" > PDF.md
-          echo "title: The Prompt Engineering Handbook" >> PDF.md
-          echo "subtitle: 21 Battle-Tested Patterns — From Beginner to Advanced" >> PDF.md
-          echo "author: Based on the Vanderbilt University Coursera Course" >> PDF.md
-          echo "geometry: margin=1in" >> PDF.md
-          echo "toc: true" >> PDF.md
-          echo "toc-depth: 2" >> PDF.md
-          echo "colorlinks: true" >> PDF.md
-          echo "linkcolor: blue" >> PDF.md
-          echo "urlcolor: blue" >> PDF.md
-          echo "header-includes:" >> PDF.md
-          echo "  - \\usepackage{fancyhdr}" >> PDF.md
-          echo "  - \\pagestyle{fancy}" >> PDF.md
-          echo "  - \\fancyhead[C]{Prompt Engineering Handbook}" >> PDF.md
-          echo "  - \\fancyfoot[C]{\\thepage}" >> PDF.md
-          echo "---" >> PDF.md
-          echo "" >> PDF.md
+          # Eisvogel-styled YAML frontmatter
+          cat <<'FRONTMATTER' > PDF.md
+          ---
+          title: "The Prompt Engineering Handbook"
+          subtitle: "21 Battle-Tested Patterns — From Beginner to Advanced"
+          author: "Based on the Vanderbilt University Coursera Course"
+          date: "$(date +'%B %d, %Y')"
+          titlepage: true
+          titlepage-color: "1a1a2e"
+          titlepage-text-color: "e94560"
+          titlepage-rule-color: "0f3460"
+          titlepage-rule-height: 2
+          toc: true
+          toc-own-page: true
+          toc-depth: 2
+          colorlinks: true
+          linkcolor: "e94560"
+          urlcolor: "0f3460"
+          geometry: "margin=1in"
+          mainfont: "DejaVu Sans"
+          monofont: "DejaVu Sans Mono"
+          fontsize: "11pt"
+          listings: true
+          listings-no-page-break: true
+          code-block-font-size: \scriptsize
+          header-includes:
+            - \usepackage{fancyhdr}
+            - \pagestyle{fancy}
+            - \fancyhead[L]{\small Prompt Engineering Handbook}
+            - \fancyhead[R]{\small\thepage}
+            - \fancyfoot[C]{}
+            - \renewcommand{\headrulewidth}{0.4pt}
+            - \usepackage{awesomebox}
+          footer-left: "Prompt Engineering Patterns"
+          footer-right: "Page \\thepage"
+          book: true
+          classoption: oneside
+          ---
+          FRONTMATTER
 
           # Append the core pattern files
           cat PATTERNS.md >> PDF.md
-          echo "" >> PDF.md
-          echo "\\newpage" >> PDF.md
-          echo "" >> PDF.md
+          printf '\n\\newpage\n\n' >> PDF.md
           cat OBSOLETE_PATTERNS.md >> PDF.md
-          echo "" >> PDF.md
-          echo "\\newpage" >> PDF.md
-          echo "" >> PDF.md
+          printf '\n\\newpage\n\n' >> PDF.md
           cat GLOSSARY.md >> PDF.md
 
-      - name: Convert Markdown to PDF with Pandoc
-        uses: docker://pandoc/latex:latest
+          # Strip GitHub-specific emojis that clutter a formal PDF
+          sed -i 's/📖 //g; s/💡 //g; s/⚙️ //g; s/🕰️ //g; s/📋 //g' PDF.md
+
+      - name: Convert Markdown to PDF with Pandoc + Eisvogel
+        uses: docker://pandoc/extra:latest
         with:
           args: >-
             --from=markdown
             --to=pdf
             --output=PDF.pdf
             --pdf-engine=xelatex
+            --template=eisvogel
+            --top-level-division=chapter
             PDF.md
 
       - name: Create or Update Release
@@ -74,7 +96,7 @@ jobs:
           tag_name: "latest"
           files: PDF.pdf
           body: |
-            📄 **Auto-generated PDF Handbook**
+            **Auto-generated PDF Handbook**
 
             Compiled directly from the latest source Markdown files in this repository.
             This PDF includes all 21 active patterns, archived patterns, and the glossary.
