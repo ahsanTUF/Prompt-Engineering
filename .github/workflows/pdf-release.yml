@@ -34,12 +34,15 @@ jobs:
           subtitle: "21 Battle-Tested Patterns — From Beginner to Advanced"
           author: "Based on the Vanderbilt University Coursera Course \\\\ Compiled by [ahsanTUF](https://github.com/ahsanTUF)"
           date: "$(date +'%B %d, %Y')"
-          fallback-fonts:
-            - "DejaVu Sans"
+          header-includes:
+            - \usepackage{newunicodechar}
+            - \usepackage{pifont}
+            - \newunicodechar{★}{\ding{72}}
+            - \newunicodechar{☆}{\ding{73}}
           titlepage: true
-          titlepage-color: "1a1a2e"
-          titlepage-text-color: "e94560"
-          titlepage-rule-color: "0f3460"
+          titlepage-color: "FFCC00"
+          titlepage-text-color: "0A192F"
+          titlepage-rule-color: "0A192F"
           titlepage-rule-height: 2
           toc: true
           toc-own-page: true
@@ -63,6 +66,8 @@ jobs:
           FRONTMATTER
 
           # Append the core pattern files
+          cat README.md >> PDF.md
+          printf '\n\\newpage\n\n' >> PDF.md
           cat PATTERNS.md >> PDF.md
           printf '\n\\newpage\n\n' >> PDF.md
           cat OBSOLETE_PATTERNS.md >> PDF.md
@@ -72,12 +77,14 @@ jobs:
           # Strip GitHub-specific emojis that clutter a formal PDF
           sed -i 's/📖 //g; s/💡 //g; s/⚙️ //g; s/🕰️ //g; s/📋 //g' PDF.md
 
-          # Convert GLOSSARY.md anchor links to internal PDF anchors FIRST
-          # e.g. [LLM](GLOSSARY.md#llm) -> [LLM](#llm)
-          sed -i 's|(GLOSSARY\.md#|(#|g' PDF.md
+          # 1. Unify Cross-File Anchors (e.g., PATTERNS.md#2-persona -> #2-persona)
+          sed -i -E 's/\([A-Z_]+\.md#/(#/g' PDF.md
 
-          # Completely convert any remaining Markdown file links [Text](file.md) to plain Text
-          sed -i -E 's/\[([^]]+)\]\([^)]+\.md\)/\1/g' PDF.md
+          # 2. Match Pandoc Auto-IDs (dynamically strip leading numbers: #2-persona -> #persona)
+          sed -i -E 's/\(#([0-9]+-)/\(#/g' PDF.md
+
+          # 3. Strip Dead File Links (clean up remaining file-to-file links lacking anchors)
+          sed -i -E 's/\[([^]]+)\]\([^)#]+\.md\)/\1/g' PDF.md
           
           # Remove isolated file-only navigation lines entirely
           sed -i '/See README\.md for the rating/d' PDF.md
