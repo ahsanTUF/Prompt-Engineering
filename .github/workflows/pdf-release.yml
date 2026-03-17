@@ -54,8 +54,18 @@ jobs:
           echo "" >> PDF.md
           cat GLOSSARY.md >> PDF.md
 
+      - name: Configure Puppeteer Sandbox Options
+        run: |
+          cat <<EOF > config.json
+          {
+            "launch_options": {
+              "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-gpu", "--disable-dev-shm-usage"]
+            }
+          }
+          EOF
+
       - name: Convert Markdown to PDF
-        run: npx md-to-pdf --launch-options '{"args":["--no-sandbox", "--disable-setuid-sandbox"]}' PDF.md
+        run: npx md-to-pdf --config-file config.json PDF.md
 
       - name: Create or Update Release
         uses: softprops/action-gh-release@v2
