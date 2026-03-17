@@ -10,13 +10,15 @@ on:
       - 'OBSOLETE_PATTERNS.md'
       - 'GLOSSARY.md'
       - '.github/workflows/pdf-release.yml'
+  workflow_dispatch: # Allows manual triggering from the Actions tab
 
 jobs:
   build-and-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+      pull-requests: read
+      id-token: write
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
