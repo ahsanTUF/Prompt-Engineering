@@ -1,0 +1,60 @@
+name: Generate and Release PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'README.md'
+      - 'PATTERNS.md'
+      - 'OBSOLETE_PATTERNS.md'
+      - 'GLOSSARY.md'
+      - '.github/workflows/pdf-release.yml'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Combined Markdown
+        run: |
+          echo "# The Prompt Engineering Handbook" > PDF.md
+          echo "### 21 Battle-Tested Patterns — From Beginner to Advanced" >> PDF.md
+          echo "" >> PDF.md
+          echo "Based on the *Prompt Engineering for ChatGPT* course by Vanderbilt University on Coursera." >> PDF.md
+          echo "" >> PDF.md
+          
+          # Extract the "Pattern Index" from README.md to act as the clickable Table of Contents
+          awk '/## 📋 Pattern Index/{flag=1; print "## Pattern Index\n"; next} /---/{if(flag) {flag=0; print ""; next}} flag {if ($0 !~ /<details>/ && $0 !~ /<\/details>/ && $0 !~ /<summary>/ && $0 !~ /<br>/) print}' README.md >> PDF.md
+          
+          echo "" >> PDF.md
+          
+          # Append the core pattern files
+          cat PATTERNS.md >> PDF.md
+          echo "" >> PDF.md
+          cat OBSOLETE_PATTERNS.md >> PDF.md
+          echo "" >> PDF.md
+          cat GLOSSARY.md >> PDF.md
+
+      - name: Convert Markdown to PDF
+        run: npx md-to-pdf PDF.md
+
+      - name: Create or Update Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Latest PDF Handbook"
+          tag_name: "latest"
+          files: PDF.pdf
+          body: "Auto-generated PDF Handbook compiled directly from the latest source Markdown files."
+          # By not setting 'draft: true', this will automatically publish. When pushing to an existing tag like 'latest', 
+          # softprops/action-gh-release updates the release files seamlessly.

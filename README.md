@@ -7,6 +7,10 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/ahsanTUF/Prompt-Engineering/releases/latest/download/PDF.pdf"><img src="https://img.shields.io/badge/Download-PDF_Handbook-FF4154?style=for-the-badge&logo=pdf&logoColor=white" /></a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Patterns-21_Active-0EA5E9?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Archived-3_Obsolete-6B7280?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Source-Vanderbilt_+_Research-8B5CF6?style=for-the-badge" />
